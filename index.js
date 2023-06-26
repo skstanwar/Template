@@ -7,8 +7,10 @@ import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { dirname  , join} from 'path';
 import userRoutes from './Routes/userRoutes.js';
+import {connectDB} from './userDB/db.js'
 
 dotenv.config();
+connectDB();
 const app = express();
 app.use(express.json());
 
