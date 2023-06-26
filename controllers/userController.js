@@ -5,8 +5,8 @@ import { server } from '@passwordless-id/webauthn'
 //     host: "smtp.ethereal.email",
 //     port: 587,
 //     auth: {
-//       user: "kumarsaini000098@hmail.com",
-//       pass: "Kumar0098@",
+//       user: 
+//       pass:
 //     },
 //   });
 
