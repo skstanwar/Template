@@ -10,7 +10,7 @@ import userRoutes from './Routes/userRoutes.js';
 import {connectDB} from './userDB/db.js'
 
 dotenv.config();
-connectDB();
+// connectDB();
 const app = express();
 app.use(express.json());
 
@@ -34,11 +34,17 @@ app.use(express.static(staticDirPath));
  app.get('/register',AntiAuth, (req , res)=>{
   res.sendFile(join(publicDirPath, 'register.html'));   
  })
- app.get('/', IsAuth, (req , res)=>{
-    res.send('home');
+ app.get('/',  (req , res)=>{
+    res.sendFile(join(publicDirPath, 'home.html'));
  });
- app.get('/news', (req , res)=>{
+ app.get('/weather',IsAuth, (req , res)=>{
     res.sendFile(join(publicDirPath, 'Weather.html'));
+ });
+ app.get('/chat',IsAuth, (req , res)=>{
+    res.sendFile(join(publicDirPath, 'chatpage.html'));
+ });
+ app.get('/leetcode',IsAuth, (req , res)=>{
+    res.sendFile(join(publicDirPath, 'leetcode.html'));
  });
  app.use('/api', userRoutes)
 

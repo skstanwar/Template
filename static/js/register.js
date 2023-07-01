@@ -26,8 +26,8 @@ async function Rgs(){
         })
        
         
-
       })
+      window.location.reload();
       console.log(response2);}
       catch(err){
         alert("Auth is Failed!");
